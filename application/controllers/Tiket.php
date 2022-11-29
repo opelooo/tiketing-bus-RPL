@@ -197,7 +197,7 @@ class Tiket extends CI_Controller {
     		redirect('tiket/cektiket');
 		}else{
 			$data['tiket'] = $sqlcek;
-			$this->load->view('frontend/payment', $data);e
+			$this->load->view('frontend/payment', $data);
 		}
 	}
 	public function konfirmasi($value='',$harga=''){
