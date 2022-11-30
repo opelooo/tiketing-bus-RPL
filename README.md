@@ -1,8 +1,10 @@
 # Tiket-Bus
 
+<!--
 [![GoDoc](https://godoc.org/github.com/tj/go-config?status.svg)](https://godoc.org/github.com/tj/go-config)
 ![](https://img.shields.io/badge/license-MIT-blue.svg)
 ![](https://img.shields.io/badge/status-stable-green.svg)
+-->
 
 Saya ada aplikasi pemesanan tiket bus sederhana berbasis web menggunakan ci 3.1.10
 
