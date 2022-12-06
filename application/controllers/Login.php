@@ -124,22 +124,22 @@ class Login extends CI_Controller {
                'charset'   => 'utf-8',
                'protocol'  => getenv('MAIL_DRIVER'),
                'smtp_host' => getenv('MAIL_HOST'),
-               'smtp_user' => getenv('MAIL_USERNAME'), // Ganti dengan email gmail kamu
-               'smtp_pass' => getenv('MAIL_PASSWORD'),    // Password gmail kamu
+               'smtp_user' => getenv('markuslucas6@gmail.com'), // Ganti dengan email gmail kamu
+               'smtp_pass' => getenv('@Uwakgeng14'),    // Password gmail kamu
                'smtp_port' => getenv('MAIL_PORT'),
                'crlf'      => "rn",
                'newline'   => "rn"
            ];
         $this->load->library('email', $config);
         $this->email->set_newline("\r\n");
-        $this->email->from('XTRANS');
+        $this->email->from('Arsyad');
         $this->email->to($this->input->post('email'));
         // $this->email->attach('https://masrud.com/content/images/20181215150137-codeigniter-smtp-gmail.png');
         if ($type == 'verify') {
-        	$this->email->subject('Account verify Tiket XTRANS');
+        	$this->email->subject('Account verify Tiket Arsyad');
        		$this->email->message('Klik link tersebut untuk verifikasi akun anda <a href="'.base_url('login/verify?email='.$this->input->post('email').'&token='.$token).'" >Verifikasi</a>');
         }elseif ($type == 'forgot') {
-        	$this->email->subject('Akun Reset Tiket XTRANS');
+        	$this->email->subject('Akun Reset Tiket Arsyad');
        		$this->email->message('Klik link tersebut untuk Reset akun anda <a href="'.base_url('login/forgot?email='.$this->input->post('email').'&token='.$token).'" >Reset Password</a>');
         }
         if ($this->email->send()) {

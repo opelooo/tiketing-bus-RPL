@@ -9,10 +9,11 @@
 	<meta name="description" content="">
 	<meta name="author" content="">
 
-	<title>Login Mantik</title>
+	<title>Login Admin</title>
 
 	<!-- Custom fonts for this template-->
-	<link href="<?= base_url() ?>assets/backend/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+	<link href="<?= base_url() ?>assets/backend/vendor/fontawesome-free/css/all.min.css" rel="stylesheet"
+		type="text/css">
 	<link
 		href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
 		rel="stylesheet">
@@ -42,26 +43,20 @@
 									</div>
 									<form class="user" method="post" action="<?= base_url('backend/login/cekuser') ?>">
 										<div class="form-group">
-											<input required="" type="text" class="form-control form-control-user" name="username"
-												aria-describedby="emailHelp" placeholder="Username...">
+											<input required="" type="text" class="form-control form-control-user"
+												name="username" aria-describedby="emailHelp" placeholder="Username...">
 										</div>
 										<div class="form-group">
-											<input required="" type="password" class="form-control form-control-user" name="password"
-												placeholder="Password">
+											<input required="" type="password" class="form-control form-control-user"
+												name="password" placeholder="Password">
 										</div>
 										<button type="submit" class="btn btn-primary btn-user btn-block">
 											Login
 										</button>
-										<!--  <hr>
-                    <a href="index.html" class="btn btn-google btn-user btn-block">
-                      <i class="fab fa-google fa-fw"></i> Login with Google
-                    </a>
-                    <a href="index.html" class="btn btn-facebook btn-user btn-block">
-                      <i class="fab fa-facebook-f fa-fw"></i> Login with Facebook
-                    </a> -->
 									</form>
 									<hr>
-									<p align="center" class="login-box-msg">IP Kamu : <?= $ipaddres; ?></p>
+									<p align="center" class="login-box-msg">IP Kamu : <?= $ipaddres; ?>
+									</p>
 
 								</div>
 							</div>
@@ -73,15 +68,15 @@
 	</div>
 
 	<!-- Bootstrap core JavaScript-->
-	<?= "<script>".$this->session->flashdata('message')."</script>"?>
-	<script src="<?= base_url() ?>assets/backend/vendor/jquery/jquery.min.js"></script>
-	<script src="<?= base_url() ?>assets/backend/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+	<?="<script>" . $this->session->flashdata('message') . "</script>" ?>
+		<script src="<?= base_url() ?>assets/backend/vendor/jquery/jquery.min.js"></script>
+		<script src="<?= base_url() ?>assets/backend/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-	<!-- Core plugin JavaScript-->
-	<script src="<?= base_url() ?>assets/backend/vendor/jquery-easing/jquery.easing.min.js"></script>
+		<!-- Core plugin JavaScript-->
+		<script src="<?= base_url() ?>assets/backend/vendor/jquery-easing/jquery.easing.min.js"></script>
 
-	<!-- Custom scripts for all pages-->
-	<script src="<?= base_url() ?>assets/backend/js/sb-admin-2.min.js"></script>
+		<!-- Custom scripts for all pages-->
+		<script src="<?= base_url() ?>assets/backend/js/sb-admin-2.min.js"></script>
 </body>
 
 </html>
