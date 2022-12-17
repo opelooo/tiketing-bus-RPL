@@ -28,14 +28,6 @@
 											<input type="password" name="password" class="form-control" placeholder="Password" required="required">
 										</div>
 									</div>
-									<div class="form-group">
-										<div class="checkbox">
-											<label>
-												<input type="checkbox" value="remember-me">
-												Remember Password
-											</label>
-										</div>
-									</div>
 									<button class="btn btn-primary btn-block">Masuk</button>
 								</form>
 								<div class="text-center">
