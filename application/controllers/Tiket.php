@@ -117,7 +117,7 @@ class Tiket extends CI_Controller {
 				'kd_tiket' => 'T'.$getkode.$kd_jadwal.str_replace('-','',$tglberangkat).$kursi[$i],
 				'kd_jadwal'	=> $kd_jadwal,
 				'kd_pelanggan' => $kd_pelanggan,
-				'asal_order' => $asal['kd_asal'],
+				'asal_order' => $tujuan['kd_asal'],
 				'nama_order'	=> $nama_pemesan,
 				'tgl_beli_order'	=> $tanggal,
 				'tgl_berangkat_order' => $tglberangkat,

@@ -15,7 +15,7 @@
 	<!-- meta character set -->
 	<meta charset="UTF-8">
 	<!-- Site Title -->
-	<title>BUS XTRANS</title>
+	<title>ANT</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
 	<link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
@@ -39,12 +39,12 @@
 						<div class="card-body">
 							<ul>
 								<li>► Jurusan
-									<b><?= $asal['kota_tujuan']." - ".$jadwal['kota_tujuan']." [".$jadwal['kd_jadwal']."]"; ?></b>
+									<b><?= strtoupper('jogjakarta')." - ".$jadwal['kota_tujuan']." [".$jadwal['kd_jadwal']."]"; ?></b>
 								</li>
 								<li>► Armada <b><?= $jadwal['nama_bus'];  ?></b></li>
 								<li>► Plat BUS <b><?= $jadwal['plat_bus'];  ?></b></li>
 								<li>► Berangkat dari
-									<b><?= strtoupper($asal['kota_tujuan'])." - ".$asal['terminal_tujuan']; ?></b></li>
+									<b><?= strtoupper(strtoupper('jogjakarta'))." - ".'Jombor'; ?></b></li>
 								<li>► Turun di
 									<b><?= strtoupper($jadwal['kota_tujuan'])." - ".$jadwal['terminal_tujuan']; ?></b>
 								</li>
@@ -163,7 +163,7 @@
 						<div class="alert alert-primary" role="alert">
 							<p>Setelah memilih kursi, silahkan klik tombol 'selanjutnya' dibawah ini !</p>
 							<div class='btn-group'>
-								<a href="<?= base_url('tiket/cekjadwal/'.$tanggal.'/'.$asal['kd_tujuan'].'/'.$jadwal['kota_tujuan']) ?>"
+								<a href="<?= base_url('tiket/cekjadwal/'.$tanggal.'/'.$jadwal['kd_tujuan'].'/'.$jadwal['kota_tujuan']) ?>"
 									class='btn btn-default'>Kembali</a>
 								<input class="btn btn-primary pull-right" disabled="disabled" type="submit"
 									value="Selanjutnya">

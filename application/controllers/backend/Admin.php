@@ -27,7 +27,7 @@ class Admin extends CI_Controller {
 		$this->form_validation->set_rules('name', 'Name', 'trim|required');
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|is_unique[tbl_admin.username_admin]',array(
 			'required' => 'Email Wajib Di isi.',
-			'is_unique' => 'Username Sudah Di Gunakan'
+			'is_unique' => 'Username Sudah Digunakan'
 			 ));
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email',array(
 			'required' => 'Email Wajib Di isi.',
@@ -58,7 +58,6 @@ class Admin extends CI_Controller {
 			$this->session->set_flashdata('message', 'swal("Berhasil", "Berhasil Tambah Akun", "success");');
     		redirect('backend/admin');
 		}
-
 	}
 }
 

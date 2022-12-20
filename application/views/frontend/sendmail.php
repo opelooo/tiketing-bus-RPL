@@ -11,7 +11,7 @@
 			<tr class="header" style="background-color:#484B51;">
 				<td style="padding-right:10px;" align="left">
 					<a href="<?= base_url() ?>" target="_blank">
-						<h4>Tiket XTRANS</h4>
+						<h4>Tiket ANT</h4>
 					</a>
 				</td>
 				<td style="padding-right:10px;" align="right">
@@ -23,8 +23,8 @@
 			<tr>
 				<td colspan="2">
 					<p style="text-align: justify; padding: 10px;">
-						Dear Customer Tiket XTRANS,<br>
-						Terima kasih telah menggunakan Tiket XTRANS.
+						Dear Customer Tiket ANT,<br>
+						Terima kasih telah menggunakan Tiket ANT.
 					</p>
 					<p style="text-align: justify; padding: 10px;">
 						Berikut Ringkasan Pembelian Anda:
@@ -180,7 +180,7 @@
 									<p style="padding:10px;">
 										<br>
 										Hormat Kami,<br>
-										<span style="color:#fd7521;"><strong>Tiket XTRANS</strong></span>
+										<span style="color:#fd7521;"><strong>Tiket ANT</strong></span>
 										<br>
 										<br>
 									</p>
@@ -191,7 +191,7 @@
 							</tr>
 							<tr class="footer" style="font-size: 10px; background-color: #484B51;color:#ffffff;">
 								<td style="padding-left:10px; padding-right:10px;">
-									<?= date("Y"); ?> &copy; Tiket XTRANS
+									<?= date("Y"); ?> &copy; Tiket ANT
 								</td>
 								<td align="right" style="padding-left:10px; padding-right:10px;">
 									<img height="30" src="https://cdn4.iconfinder.com/data/icons/dot/256/bus.png" border="0">

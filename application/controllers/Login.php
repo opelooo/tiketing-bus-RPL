@@ -25,37 +25,38 @@ class Login extends CI_Controller {
 		$sqlCheck = $this->db->query('select * from tbl_pelanggan where username_pelanggan = "'.$username.'" OR email_pelanggan = "'.$username.'" ')->row();
 		// die(print_r($sqlCheck));
 		if ($sqlCheck) {
-			if ($sqlCheck->status_pelanggan == 1) { 
-				if (password_verify($password,$sqlCheck->password_pelanggan)) {
-						$sess = [
-							'kd_pelanggan' => $sqlCheck->kd_pelanggan,
-							'username' => $sqlCheck->username_pelanggan,
-							'password' => $sqlCheck->password_pelanggan,
-							'ktp'     => $sqlCheck->no_ktp_pelanggan,
-							'nama_lengkap'     => $sqlCheck->nama_pelanggan,
-							'img_pelanggan'	=> $sqlCheck->img_pelanggan,
-							'email'   => $sqlCheck->email_pelanggan,
-							'telpon'   => $sqlCheck->telpon_pelanggan,
-							'alamat'	=> $sqlCheck->alamat_pelanggan
-						];
-						$this->session->set_userdata($sess);
-						if ($this->session->userdata('jadwal') == NULL) {
-							redirect('tiket');
-						}else{
-							redirect('tiket/beforebeli/'.$this->session->userdata('jadwal').'/'.$this->session->userdata('asal').'/'.$this->session->userdata('tanggal'));
-						}
+			// if ($sqlCheck->status_pelanggan == 1) { 
+			if (password_verify($password,$sqlCheck->password_pelanggan)) {
+					$sess = [
+						'kd_pelanggan' => $sqlCheck->kd_pelanggan,
+						'username' => $sqlCheck->username_pelanggan,
+						'password' => $sqlCheck->password_pelanggan,
+						'ktp'     => $sqlCheck->no_ktp_pelanggan,
+						'nama_lengkap'     => $sqlCheck->nama_pelanggan,
+						'img_pelanggan'	=> $sqlCheck->img_pelanggan,
+						'email'   => $sqlCheck->email_pelanggan,
+						'telpon'   => $sqlCheck->telpon_pelanggan,
+						'alamat'	=> $sqlCheck->alamat_pelanggan
+					];
+					$this->session->set_userdata($sess);
+					if ($this->session->userdata('jadwal') == NULL) {
+						redirect('tiket');
 					}else{
-					$this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">
-						Salah Password
-					</div>');
-					redirect('login');
-				}
-			}else{
+						redirect('tiket/beforebeli/'.$this->session->userdata('jadwal').'/'.$this->session->userdata('asal').'/'.$this->session->userdata('tanggal'));
+					}
+				// }else{
+				// 	$this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">
+				// 			Username Belum verifikasi cek kembali email anda
+				// 		</div>');
+				// 	redirect('login');
+				// }
+				}else{
 				$this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">
-						Username Belum verifikasi cek kembali email anda
-					</div>');
+					Salah Password
+				</div>');
 				redirect('login');
 			}
+			
 		}else{
 			$this->session->set_flashdata('pesan', '<div class="alert alert-danger" role="alert">
 						Username Tidak Terdaftar
@@ -67,7 +68,7 @@ class Login extends CI_Controller {
 	public function daftar(){
 		$this->form_validation->set_rules('nomor', 'Nomor', 'trim|required|is_unique[tbl_pelanggan.telpon_pelanggan]',array(
 			'required' => 'Nomor HP Wajib Di isi.',
-			'is_unique' => 'Nomor Sudah Di Gunakan.'
+			'is_unique' => 'Nomor Sudah Digunakan.'
 			 ));
 		$this->form_validation->set_rules('name', 'Name', 'trim|required',array(
 			'required' => 'Nama Wajib Di isi.',
@@ -75,12 +76,12 @@ class Login extends CI_Controller {
 		$this->form_validation->set_rules('alamat', 'Alamat', 'trim|required');
 		$this->form_validation->set_rules('username', 'Username', 'trim|required|min_length[5]|is_unique[tbl_pelanggan.username_pelanggan]',array(
 			'required' => 'Username Wajib Di isi.',
-			'is_unique' => 'Username Sudah Di Gunakan.'
+			'is_unique' => 'Username Sudah Digunakan.'
 			 ));
 		$this->form_validation->set_rules('email', 'Email', 'trim|required|valid_email|is_unique[tbl_pelanggan.email_pelanggan]',array(
 			'required' => 'Email Wajib Di isi.',
 			'valid_email' => 'Masukan Email Dengan Benar',
-			'is_unique' => 'Email Sudah Di Gunakan.'
+			'is_unique' => 'Email Sudah Digunakan.'
 			 ));
 		$this->form_validation->set_rules('password1', 'Password', 'trim|required|min_length[8]|matches[password2]',array(
 			'matches' => 'Password Tidak Sama.',
@@ -113,7 +114,7 @@ class Login extends CI_Controller {
 			$this->db->insert('tbl_pelanggan', $data);
 			$this->db->insert('tbl_token_pelanggan', $data1);
 			$this->_sendmail($token,'verify');
-			$this->session->set_flashdata('message', 'swal("Berhasil", "Berhasil Daftar Harap Cek Email Kamu", "success");');
+			$this->session->set_flashdata('message', 'swal("Berhasil", "Berhasil Daftar!", "success");');
     		redirect('login');
 		}
 

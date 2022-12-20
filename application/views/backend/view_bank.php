@@ -143,7 +143,7 @@
 						<div class="col-sm-6">
 							<p>Nama Bank : <b> <?= $bank['nama_bank']?>]</b></p>
 							<p>Nama Nasabah: <b><?= strtoupper($bank['nasabah_bank']) ?></b></p>
-							<p>Nomor Rekening : <b><?= $bank['nomrek_bank']; ?> Kursi</b></p>
+							<p>Nomor Rekening : <b><?= $bank['nomrek_bank']; ?></b></p>
 							<p>Photo Bank : <img id="myImg" src="<?= base_url($bank['photo_bank']) ?>" alt="<?= $bank['nama_bank'] ?>"
 									style="width:100%;max-width:300px"></p>
 						</div>
